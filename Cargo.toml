@@ -5,6 +5,7 @@ authors = ["Kristofer Jarl <kristofer.jarl@gmail.com>"]
 license = "MIT"
 description = "A small wrapper library for handling LZF compression with headers"
 keywords = ["lzf", "headers", "compression"]
+repository = "https://github.com/silverbeak/lzf_headers"
 
 [dependencies]
 lzf = "0.3.1"
