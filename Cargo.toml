@@ -2,7 +2,14 @@
 name = "lzf_headers"
 version = "0.1.0"
 authors = ["Kristofer Jarl <kristofer.jarl@gmail.com>"]
+license = "MIT"
+description = "A small wrapper library for handling LZF compression with headers"
+keywords = ["lzf", "lzf headers", "compression"]
 
 [dependencies]
 lzf = "0.3.1"
 byteorder = "1"
+
+[lib]
+name = "lzf_headers"
+path = "src/lib.rs"
