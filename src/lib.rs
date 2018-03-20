@@ -4,6 +4,16 @@ extern crate lzf;
 extern crate byteorder;
 
 /// Takes a _compressed_ payload (with LZF header) and returns the decompressed payload
+///
+/// # Examples
+///
+/// ```
+/// let compressed_content = ...
+/// match decompress_lzf(compressed_content) {
+///     Ok(decompressed) => println!("Decompressed: {:?}", decompressed),
+///     Err(error) => // Handle error
+/// };
+/// ```
 pub fn decompress_lzf(payload: &[u8]) -> Result<Vec<u8>, String> {
     match utils::headers::lzf_structure_from_compressed(payload) {
         Ok(structure) => structure.get_decompressed_payload(),
@@ -12,6 +22,16 @@ pub fn decompress_lzf(payload: &[u8]) -> Result<Vec<u8>, String> {
 }
 
 /// Takes an _uncompressed_ payload and returns the compressed payload (with LZF headers)
+///
+/// # Examples
+///
+/// ```
+/// let test_string = "An adequately long string. Longer than this..."
+/// match compress_lzf(test_string.as_bytes()) {
+///     Ok(decompressed) => // Handle decompressed data,
+///     Err(error) => // Handle error
+/// };
+/// ```
 pub fn compress_lzf(payload: &[u8]) -> Result<Vec<u8>, String> {
     match utils::headers::lzf_structure_from_uncompressed(payload) {
         Ok(structure) => Ok(structure.to_compressed()),

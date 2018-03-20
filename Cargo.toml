@@ -1,6 +1,6 @@
 [package]
 name = "lzf_headers"
-version = "0.1.0"
+version = "0.1.1"
 authors = ["Kristofer Jarl <kristofer.jarl@gmail.com>"]
 license = "MIT"
 description = "A small wrapper library for handling LZF compression with headers"
